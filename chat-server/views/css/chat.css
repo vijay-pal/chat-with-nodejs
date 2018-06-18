@@ -199,7 +199,6 @@ p { margin: 0; }
   }
   
   .mine .message {
-	color: white;
 	margin-left: 25%;
 	background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
 	background-attachment: fixed;

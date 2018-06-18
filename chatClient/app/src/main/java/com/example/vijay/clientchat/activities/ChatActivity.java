@@ -82,9 +82,9 @@ public class ChatActivity extends BaseActivity implements TextWatcher, TextView.
     setUpToolBar((Toolbar) findViewById(R.id.toolbar));
     mActionBar = getSupportActionBar();
 
-    mInputMessageView = findViewById(R.id.edit_message);
+    mInputMessageView = (EditText) findViewById(R.id.edit_message);
 
-    mMessagesView = findViewById(R.id.recycler_view);
+    mMessagesView = (RecyclerView) findViewById(R.id.recycler_view);
     mMessagesView.setLayoutManager(new LinearLayoutManager(this));
 
     mAdapter = new MessageAdapter(mMessages);
@@ -93,9 +93,9 @@ public class ChatActivity extends BaseActivity implements TextWatcher, TextView.
     mInputMessageView.addTextChangedListener(this);
     mInputMessageView.setOnEditorActionListener(this);
 
-    ImageButton btnSend = findViewById(R.id.btn_send);
+    ImageButton btnSend = (ImageButton) findViewById(R.id.btn_send);
     btnSend.setOnClickListener(this);
-    ImageButton btnAttachment = findViewById(R.id.btn_attachment);
+    ImageButton btnAttachment = (ImageButton) findViewById(R.id.btn_attachment);
     btnAttachment.setOnClickListener(this);
 
     initChat();

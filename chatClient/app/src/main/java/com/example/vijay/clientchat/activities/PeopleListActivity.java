@@ -64,10 +64,10 @@ public class PeopleListActivity extends BaseActivity implements MaterialSearchVi
       mCurrentUserName = intent.getStringExtra(Constants.KEY_USER_NAME);
     }
 
-    mToolbar = findViewById(R.id.toolbar);
+    mToolbar = (Toolbar) findViewById(R.id.toolbar);
     super.setUpToolBar(mToolbar);
 
-    mSearchView = findViewById(R.id.search_view);
+    mSearchView = (MaterialSearchView) findViewById(R.id.search_view);
 
     mSearchView.setOnQueryTextListener(this);
     mSearchView.setOnSearchViewListener(this);
@@ -79,8 +79,8 @@ public class PeopleListActivity extends BaseActivity implements MaterialSearchVi
     mUserPresenter = new UserPresenterImpl(this);
     mAdapter = new PeoplePagerAdapter(getSupportFragmentManager(), mCurrentUserId, mCurrentUserEmail, mCurrentUserName);
 
-    TabLayout tabLayout = findViewById(R.id.tab_layout);
-    ViewPager viewPager = findViewById(R.id.view_pager);
+    TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+    ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
     tabLayout.setupWithViewPager(viewPager);
     viewPager.setAdapter(mAdapter);
   }

@@ -19,7 +19,7 @@
         console.log("email::" + email + " | name::" + displayName);
         $("#_id_room_title").text(displayName);
         $("#receiver_id").val(email);
-        if(!$('#live-chat').is(':visible')){
+        if (!$('#live-chat').is(':visible')) {
             $('#live-chat').fadeIn(300);
         }
     });
@@ -78,11 +78,11 @@
             "</div>" +
             "</div>";
         $(chatMsg).appendTo("#id_chat_history");
-        // $("#id_chat_history").append($(chatMsg).fadeIn('slow'));
+        // $('#messages').append($('<li>').text(msg));
         var scroll = $('#id_chat_history');
         scroll.animate({ scrollTop: scroll.prop("scrollHeight") });
-        // return false;
         $('#m').val('');
+        return false;
     });
 
     var typing = false;
