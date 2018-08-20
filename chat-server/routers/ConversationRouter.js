@@ -46,13 +46,11 @@ module.exports = function (io) {
 
         socket.on('image-message', function (data) {
             var msg = JSON.parse(data);
-            // console.log('data::' + msg.message);
-            // console.log('data::' + msg.type);
-            /*  var filePath = path.resolve('/home/vijay/Pictures', new Date().getTime() + '.' + "jpg");
+             var filePath = path.resolve('/home/vijay/Pictures', new Date().getTime() + '.' + "jpg");
              console.log('file::', filePath);
              fs.writeFile(filePath, msg.message, 'base64', function (err) {
                  console.log("err::" + err);
-             }); */
+             });
 
             sender = msg.sender;
             receiver = msg.receiver;

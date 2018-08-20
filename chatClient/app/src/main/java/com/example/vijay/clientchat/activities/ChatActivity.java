@@ -105,9 +105,9 @@ public class ChatActivity extends BaseActivity implements TextWatcher, TextView.
   private void initChat() {
     Intent intent = getIntent();
     if (intent != null) {
-      mSender = intent.getStringExtra("sender");
-      mSenderId = intent.getStringExtra("sender_id");
-      mReceiver = intent.getStringExtra("receiver");
+      mSender = "2";//intent.getStringExtra("sender");
+      mSenderId = "2";//intent.getStringExtra("sender_id");
+      mReceiver = "1";//intent.getStringExtra("receiver");
 //      addLog(getResources().getString(R.string.message_welcome));
 //      addParticipantsLog(1);
       if (mActionBar != null) {
@@ -311,13 +311,13 @@ public class ChatActivity extends BaseActivity implements TextWatcher, TextView.
   private Emitter.Listener onConnect = new Emitter.Listener() {
     @Override
     public void call(Object... args) {
+      Log.i(TAG, "onConnect::" + mSender);
       runOnUiThread(new Runnable() {
         @Override
         public void run() {
           if (!isConnected) {
             if (null != mSender)
               mSocket.emit("connect_user", mSender);
-            Log.i(TAG, "onConnect::" + mSender);
             isConnected = true;
           }
         }
